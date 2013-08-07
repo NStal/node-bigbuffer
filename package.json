@@ -1,0 +1,24 @@
+{
+    "name": "bigbuffer",
+    "version": "0.0.1",
+    "description": "Using list of buffer to break through V8's buffer size limitation (500M usually).",
+    "main": "index.js",
+    "dependencies":{
+	"should":"*"
+    },
+    "scripts": {
+	"test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+	"type": "git",
+	"url": "git@github.com:NStal/node-bigbuffer.git"
+    },
+    "keywords": [
+	"buffer"
+    ],
+    "author": "NStal",
+    "license": "MIT",
+    "bugs": {
+	"url": "https://github.com/NStal/node-bigbuffer/issues"
+    }
+}
