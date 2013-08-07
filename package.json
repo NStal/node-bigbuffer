@@ -1,6 +1,6 @@
 {
     "name": "bigbuffer",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Using list of buffer to break through V8's buffer size limitation (500M usually).",
     "main": "index.js",
     "dependencies":{

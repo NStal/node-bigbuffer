@@ -1,1 +1,1 @@
-module.exports = require "./lib/bigBuffer.coffee"
+module.exports = require("./lib/bigBuffer.js")
