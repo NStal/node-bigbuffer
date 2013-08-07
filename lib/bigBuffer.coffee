@@ -1,6 +1,11 @@
 fs = require "fs"
 class BigBuffer
     @fromFile:(path,callback)->
+        try
+            callback null,@fromFileSync(path)
+        catch e
+            callback e
+    @fromFileSync:(path)->
         KB = 1024
         bb = new BigBuffer()
         fd = fs.openSync path,"r"
@@ -19,7 +24,7 @@ class BigBuffer
             #console.assert howManyRead is bb.length - oldLength
             mayBeTotal += bb.length - oldLength
         fs.closeSync fd
-        callback null,bb
+        return bb
     constructor:()->
         @blocks = []
         @blockSize = 256 * 1024
