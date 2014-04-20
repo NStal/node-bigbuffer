@@ -1,13 +1,13 @@
 {
     "name": "bigbuffer",
-    "version": "0.0.4",
-    "description": "Using list of buffer to break through V8's buffer size limitation (500M usually).",
+    "version": "0.0.5",
+    "description": "Using list of buffer to break through Nodejs's buffer size limitation",
     "main": "index.js",
     "dependencies":{
 	"should":"*"
     },
     "scripts": {
-	"test": "echo \"Error: no test specified\" && exit 1"
+	"test": "mocha -b -R spec --compilers .coffee:coffee-script ./test/test.coffee -t 50000"
     },
     "repository": {
 	"type": "git",

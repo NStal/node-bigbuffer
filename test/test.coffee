@@ -4,14 +4,14 @@ fs = require "fs"
 KB = 1024
 MB = 1024 * KB
 bb = null
-testFile = "./1G"
+testFile = "./2G"
 describe "test bigbuffer",()->
-    it "create test 1G file",(done)->
+    it "create test 2G file",(done)->
         KB = 1024
         MB = 1024 * KB
         GB = 1024 * MB
         filename = testFile
-        size = 1024 * MB
+        size = 2* 1024 * MB
         str = new Array(MB).join("0123456789")
         buff = new Buffer(str)
         fd = fs.openSync filename,"w"    
@@ -40,4 +40,7 @@ describe "test bigbuffer",()->
             String.fromCharCode(bb.byteAt(start+index)).should.equal(sliceString[index])
         sliceString.should.equal("0123456789")
         done()
-    
+
+after (done)->
+    fs.unlinkSync testFile
+    done()
